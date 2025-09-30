@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalogApi", "ProductCatalogApi.csproj", "{0C6AF1CC-E30D-4D76-AFBD-0C1502913AB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Presentation", "ProductCatalog.Presentation.csproj", "{0C6AF1CC-E30D-4D76-AFBD-0C1502913AB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Domain", "..\ProductCatalog.Domain\ProductCatalog.Domain.csproj", "{FBF8EFA2-3B50-47CB-B612-E5951E8A80DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Application", "..\ProductCatalog.Application\ProductCatalog.Application.csproj", "{1B5C1ADC-5557-4180-8B50-0BD1834F6D31}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Infrastructure", "..\ProductCatalog.Infrastructure\ProductCatalog.Infrastructure.csproj", "{CCBB9A64-9761-495C-B22E-2674FDC8DD91}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Presentation", "..\ProductCatalog.Presentation\ProductCatalog.Presentation.csproj", "{CD3FAAC8-9774-4C35-AB23-2BB17EA4F710}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{CCBB9A64-9761-495C-B22E-2674FDC8DD91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCBB9A64-9761-495C-B22E-2674FDC8DD91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCBB9A64-9761-495C-B22E-2674FDC8DD91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD3FAAC8-9774-4C35-AB23-2BB17EA4F710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD3FAAC8-9774-4C35-AB23-2BB17EA4F710}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD3FAAC8-9774-4C35-AB23-2BB17EA4F710}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD3FAAC8-9774-4C35-AB23-2BB17EA4F710}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
