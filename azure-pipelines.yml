@@ -1,0 +1,54 @@
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+  # Install .NET 8 SDK
+  - task: UseDotNet@2
+    displayName: 'Install .NET 8 SDK'
+    inputs:
+      packageType: 'sdk'
+      version: '8.0.x'
+
+  # Install NuGet
+  - task: NuGetToolInstaller@1
+    displayName: 'Install NuGet'
+
+  # Restore NuGet packages
+  - task: NuGetCommand@2
+    displayName: 'Restore NuGet Packages'
+    inputs:
+      restoreSolution: '**/*.sln'
+
+  # Build solution
+  - task: DotNetCoreCLI@2
+    displayName: 'Build Solution'
+    inputs:
+      command: 'build'
+      projects: '**/*.sln'
+      arguments: '--configuration $(buildConfiguration)'
+
+  # Run unit tests
+  - task: DotNetCoreCLI@2
+    displayName: 'Run Unit Tests'
+    inputs:
+      command: 'test'
+      projects: '**/*Tests/*.csproj'
+      arguments: '--configuration $(buildConfiguration) --logger trx'
+
+  # # (Optional) Build Docker image
+  # - task: Docker@2
+  #   displayName: 'Build Docker Image'
+  #   inputs:
+  #     command: 'build'
+  #     dockerfile: 'Dockerfile'
+  #     tags: |
+  #       $(Build.BuildId)
