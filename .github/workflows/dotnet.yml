@@ -22,11 +22,11 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies
-      run: dotnet restore ProductCatalog.sln
+      run: dotnet restore src
 
     - name: Build
-      run: dotnet build ProductCatalog.sln --configuration Release --no-restore
+      run: dotnet build src --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test ProductCatalog.sln --configuration Release --no-build --verbosity normal
+      run: dotnet test src --configuration Release --no-build --verbosity normal
 
