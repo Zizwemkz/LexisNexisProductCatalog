@@ -22,11 +22,11 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies
-      run: dotnet restore src
+      run: dotnet restore
 
     - name: Build
-      run: dotnet build src --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test src --configuration Release --no-build --verbosity normal
+      run: dotnet test --configuration Release --no-build --verbosity normal
 
