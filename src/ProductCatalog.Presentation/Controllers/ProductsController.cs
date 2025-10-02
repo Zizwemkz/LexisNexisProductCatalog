@@ -1,13 +1,13 @@
 #nullable enable
 using Microsoft.AspNetCore.Mvc;
-using ProductCatalog.Domain.Entities;
-using ProductCatalog.Domain.Repositories;
 using ProductCatalog.Application.Services;
 using ProductCatalog.Application.DTOs;
 using System;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using ProductCatalog.Domain.Models;
+using ProductCatalog.Domain.Interface;
 
 namespace ProductCatalog.Presentation.Controllers;
 
@@ -16,9 +16,9 @@ namespace ProductCatalog.Presentation.Controllers;
 public class ProductsController : ControllerBase
 {
     private readonly IRepository<Product> _productRepo;
-    private readonly ProductSearchEngine _searchEngine;
+    private readonly IProductSearchEngine _searchEngine;
 
-    public ProductsController(IRepository<Product> productRepo, ProductSearchEngine searchEngine)
+    public ProductsController(IRepository<Product> productRepo, IProductSearchEngine searchEngine)
     {
         _productRepo = productRepo;
         _searchEngine = searchEngine;

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ProductCatalog.Domain.Repositories;
+namespace ProductCatalog.Domain.Interface;
 
 public interface IRepository<T> where T : class
 {

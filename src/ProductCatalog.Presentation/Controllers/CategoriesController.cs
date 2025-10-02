@@ -1,11 +1,11 @@
 #nullable enable
 using Microsoft.AspNetCore.Mvc;
-using ProductCatalog.Domain.Entities;
-using ProductCatalog.Domain.Repositories;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using ProductCatalog.Domain.Interface;
+using ProductCatalog.Domain.Models;
 
 namespace ProductCatalog.Presentation.Controllers;
 

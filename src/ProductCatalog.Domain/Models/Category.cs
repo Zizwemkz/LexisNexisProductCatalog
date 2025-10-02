@@ -1,8 +1,7 @@
-#nullable enable
 using System;
 using System.Collections.Generic;
 
-namespace ProductCatalog.Domain.Entities;
+namespace ProductCatalog.Domain.Models;
 
 public class Category
 {
@@ -12,7 +11,6 @@ public class Category
     public Guid? ParentCategoryId { get; private set; }
     public List<Category> Children { get; } = new();
 
-    protected Category() { }
     public Category(Guid id, string name, string? description = null, Guid? parentCategoryId = null)
     {
         Id = id == Guid.Empty ? Guid.NewGuid() : id;

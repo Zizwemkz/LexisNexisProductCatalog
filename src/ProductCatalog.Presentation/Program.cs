@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using ProductCatalog.Domain.Entities;
-using ProductCatalog.Domain.Repositories;
 using ProductCatalog.Infrastructure.Data;
 using ProductCatalog.Infrastructure.Repositories;
 using ProductCatalog.Application.Services;
 using System.Text.Json;
 using ProductCatalog.Presentation.Middleware;
 using Microsoft.OpenApi.Models;
+using ProductCatalog.Domain.Interface;
+using ProductCatalog.Domain.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

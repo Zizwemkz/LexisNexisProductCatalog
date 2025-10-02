@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using ProductCatalog.Domain.Entities;
+using ProductCatalog.Domain.Models;
 
 namespace ProductCatalog.Application.LinqExtensions;
 

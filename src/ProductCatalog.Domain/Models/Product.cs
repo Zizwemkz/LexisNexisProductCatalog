@@ -1,7 +1,6 @@
-#nullable enable
 using System;
 
-namespace ProductCatalog.Domain.Entities;
+namespace ProductCatalog.Domain.Models;
 
 public class Product : IComparable<Product>
 {
@@ -15,8 +14,6 @@ public class Product : IComparable<Product>
     public DateTime CreatedAt { get; private set; }
     public DateTime UpdatedAt { get; private set; }
 
-    protected Product() { }
-
     public Product(Guid id, string name, string sku, decimal price, int quantity, Guid categoryId, string? description = null)
     {
         Id = id == Guid.Empty ? Guid.NewGuid() : id;
@@ -29,6 +26,7 @@ public class Product : IComparable<Product>
         CreatedAt = DateTime.UtcNow;
         UpdatedAt = DateTime.UtcNow;
     }
+    private Product() { }
 
     public void Update(string? name, string? description, decimal? price, int? quantity, Guid? categoryId)
     {

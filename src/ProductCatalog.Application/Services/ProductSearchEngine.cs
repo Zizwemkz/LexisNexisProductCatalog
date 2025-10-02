@@ -4,13 +4,13 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ProductCatalog.Domain.Entities;
-using ProductCatalog.Domain.Repositories;
 using ProductCatalog.Application.LinqExtensions;
+using ProductCatalog.Domain.Models;
+using ProductCatalog.Domain.Interface;
 
 namespace ProductCatalog.Application.Services;
 
-public class ProductSearchEngine
+public class ProductSearchEngine : IProductSearchEngine
 {
     private readonly IRepository<Product> _productRepository;
     private readonly ConcurrentDictionary<string, IEnumerable<Product>> _cache = new();

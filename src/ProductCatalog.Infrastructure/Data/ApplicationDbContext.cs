@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using ProductCatalog.Domain.Entities;
+using ProductCatalog.Domain.Models;
 
 namespace ProductCatalog.Infrastructure.Data;
 
