@@ -9,7 +9,17 @@ using ProductCatalog.Domain.Interface;
 using ProductCatalog.Domain.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:4200")
+                               .AllowAnyHeader()
+                                .AllowAnyMethod();
+                      });
+});
 builder.Services.AddControllers().AddJsonOptions(opt =>
 {
     opt.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
@@ -65,7 +75,7 @@ app.UseHttpsRedirection();
 
 // custom exception middleware
 app.UseMiddleware<CustomExceptionMiddleware>();
-
+app.UseCors(MyAllowSpecificOrigins);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
